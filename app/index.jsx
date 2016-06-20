@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Remarkable from 'remarkable';
+import './style.scss';
 var MDviewer = React.createClass({
 	getInitialState() {
 	    return {
@@ -21,16 +22,17 @@ var MDviewer = React.createClass({
 	},
 	render:function(){
 		return (
-			<div className="container">
-				<h1 className="text-center">Markdown Viewer</h1>
-			    <div className='col-xs-12 col-md-6'>
-			    <h2 className='text-center'>Markdown</h2>
-				<textarea className='form-control' ref='md' cols="30" rows="20" palcaholder="Type your Markdown here !" value={this.state.text} onChange={this.handle}></textarea>
+			<div>
+				<h1 className='header'><a href="./">Markdown Viewer</a></h1>
+			    <div className='Markdown'>
+			    	<h2>Markdown</h2>
+				<textarea ref='md' cols="30" rows="20" palcaholder="Type your Markdown here !" value={this.state.text} onChange={this.handle}></textarea>
 				</div>
-				<div className='col-xs-12 col-md-6'>
-					<h2 className='text-center'>Output</h2>
+				<div className='Output'>
+					<h2>Output</h2>
 					<div dangerouslySetInnerHTML={this.Markdown()}></div>
 				</div>
+				<a href='https://github.com/AungMyoKyaw/mdVeiwer' className='ribbon' target='_blank'><img src="http://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork Me"/></a>
 			</div>
 		);
 	}

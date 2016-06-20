@@ -1,0 +1,67 @@
+@import "juice";
+$browser-prefixes: true !default;
+.header{
+	@include center-block;
+	text-align:center;	
+	 @include letterpress(0.75);
+	a{
+		text-decoration: none;
+	}
+	&:after{
+		display: block;
+		position: relative;
+		left:0;
+		bottom:-.3em;
+		width:0;
+		height:.2em;
+		background-color: #6279EE;
+		content: '';
+		transition: width 0.5s;
+	}
+	&:hover:after{
+			width: 100%;
+	}
+}
+.Markdown{
+	@include bp(small){
+		width:100%;
+		display: block;
+	}
+	@include bp(large-up){
+		width:40%;
+		display: inline-block;
+		float:left;
+	}
+	h2{
+		@extend .header;
+	}
+	textarea{
+		font-size: 1.2em;
+		resize:none;
+		width:100%;
+	}
+}
+.Output{
+	@include bp(small-only){
+		width:100%;
+		display: block;
+	}
+	@include bp(large-up){
+		width:40%;
+		display: inline-block;
+		float: right;
+	}
+	h2{
+		@extend .header;
+	}
+}
+.ribbon{
+	display:none;
+	@include bp(large-up){
+		display: inline-block;
+		position: fixed;
+		top:0;
+		left:0;
+		border:0;
+	}
+}
