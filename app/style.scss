@@ -32,7 +32,7 @@ $browser-prefixes: true !default;
 		display: inline-block;
 		float:left;
 	}
-	h2{
+	& > h2{
 		@extend .header;
 	}
 	textarea{
@@ -51,7 +51,7 @@ $browser-prefixes: true !default;
 		display: inline-block;
 		float: right;
 	}
-	h2{
+	& > h2{
 		@extend .header;
 	}
 }
