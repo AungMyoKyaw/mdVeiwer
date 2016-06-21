@@ -10,6 +10,7 @@ $browser-prefixes: true !default;
 	&:after{
 		display: block;
 		position: relative;
+		margin:0 auto;
 		left:0;
 		bottom:-.3em;
 		width:0;
@@ -19,7 +20,7 @@ $browser-prefixes: true !default;
 		transition: width 0.5s;
 	}
 	&:hover:after{
-			width: 100%;
+			width: 80%;
 	}
 }
 .Markdown{
