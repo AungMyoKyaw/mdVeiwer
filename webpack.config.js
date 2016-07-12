@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 module.exports = {
-	entry:['./app/index.jsx'],
+	entry:['./app/js/index.jsx'],
 	output:{
 		filename:'build.js',
 		path:__dirname + '/build'
@@ -9,17 +9,22 @@ module.exports = {
 		loaders:[
 		{
 			test:/\.jsx$/,
-			include:__dirname + '/app',
+			include:__dirname + '/app/js',
 			loader:'babel'
 		},
 		{
 			test:/\.scss$/,
-			include:__dirname + '/app',
+			include:__dirname + '/app/style',
 			loader:'style!css!sass',
 		}
 		]
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env':{
+				'NODE_ENV':JSON.stringify('production'),
+			}
+		}),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
@@ -28,5 +33,6 @@ module.exports = {
                 comments: false,
             },
         }),
+        new webpack.optimize.DedupePlugin(),
 	]
 };

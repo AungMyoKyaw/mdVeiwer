@@ -40,6 +40,7 @@ $browser-prefixes: true !default;
 		font-size: 1.2em;
 		resize:none;
 		width:100%;
+		height: 20em;
 	}
 }
 .Output{
@@ -65,4 +66,8 @@ $browser-prefixes: true !default;
 		left:0;
 		border:0;
 	}
+}
+#mdOutput{
+	height:20em;
+	overflow:auto;
 }
